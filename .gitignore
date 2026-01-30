@@ -1,0 +1,76 @@
+﻿
+FullName@                                                                                                              
+# Python                                                                                                               
+__pycache__/                                                                                                           
+*.py[cod]                                                                                                              
+*$py.class                                                                                                             
+*.so                                                                                                                   
+.Python                                                                                                                
+.venv/                                                                                                                 
+venv/                                                                                                                  
+ENV/                                                                                                                   
+*.egg-info/                                                                                                            
+dist/                                                                                                                  
+build/                                                                                                                 
+                                                                                                                       
+# Terraform                                                                                                            
+*.tfstate                                                                                                              
+*.tfstate.*                                                                                                            
+.terraform/                                                                                                            
+*.tfvars                                                                                                               
+.terraform.lock.hcl                                                                                                    
+                                                                                                                       
+# Secrets                                                                                                              
+.env                                                                                                                   
+.env.local                                                                                                             
+secrets.json                                                                                                           
+*.pem                                                                                                                  
+*.key                                                                                                                  
+                                                                                                                       
+# IDE                                                                                                                  
+.vscode/                                                                                                               
+.idea/                                                                                                                 
+*.swp                                                                                                                  
+                                                                                                                       
+# OS                                                                                                                   
+.DS_Store                                                                                                              
+Thumbs.db                                                                                                              
+                                                                                                                       
+# Logs                                                                                                                 
+*.log                                                                                                                  
+logs/                                                                                                                  
+                                                                                                                       
+# AWS                                                                                                                  
+.aws/credentials                                                                                                       
+                                                                                                                       
+# Windows                                                                                                              
+desktop.ini                                                                                                            
+@                                                                                                                      
+-----------------------------------------------------------------------------------------------------------------------
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+
+
