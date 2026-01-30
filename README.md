@@ -32,39 +32,6 @@ An intelligent automation platform that eliminates manual workflows by integrati
 | **CI/CD** | GitHub Actions |
 | **Cloud** | AWS, Azure, GCP |
 
-## 💰 Cost Analysis (Dev Environment)
-
-**Monthly Cost:** ~\$10-15  
-**Production Equivalent:** \$680/month  
-**Annual Savings (Production):** \$254,550  
-**ROI:** 1,325%  
-**Payback Period:** 1 month  
-
-### Cost Breakdown
-- DynamoDB (pay-per-request): \$2-3
-- S3 (7-day retention): \$1
-- SQS: \$0.50
-- Bedrock (testing): \$5-8
-- **Total:** ~\$10-15/month
-
-## 📊 Current Progress
-
-- [x] **Day 1:** AWS infrastructure deployed with Terraform ✅
-  - VPC with public/private subnets
-  - 2 DynamoDB tables (cache + agent state)
-  - SQS queue for async processing
-  - S3 bucket with lifecycle policies
-  - IAM roles and security groups
-  - **18 resources deployed**
-  
-- [ ] **Day 2:** Multi-agent system with LangGraph
-- [ ] **Week 1:** Slack + Jira integration via MCP
-- [ ] **Week 2:** Salesforce integration + Azure deployment
-- [ ] **Week 3:** GCP deployment + advanced features
-- [ ] **Week 4:** Cost analysis + security hardening + documentation
-
-## 🎓 Key Learnings & Demonstrations
-
 This project demonstrates:
 
 1. **Production Architecture Patterns** - Multi-cloud, IaC, observability
@@ -118,19 +85,7 @@ enterprise-workflow-agent/
 └── scripts/              # Utility scripts
 \`\`\`
 
-## 🎤 Interview Talking Points
 
-**"Tell me about a project you built"**
-
-> "I built an enterprise workflow automation platform that saves companies \$250K annually by replacing manual processes with AI agents. The system integrates with Slack, Jira, and Salesforce to automatically triage issues, research context, execute actions, and track outcomes.
->
-> I deployed it across AWS, Azure, and GCP using Terraform for infrastructure-as-code, proving 65% cost savings by optimizing model selection. The architecture includes multi-agent orchestration with LangGraph, full observability with LangFuse, and production security patterns—all in a dev environment at \$15/month to demonstrate skills without production costs."
-
-**Key Metrics:**
-- 145 hours/week saved (3.65 FTEs)
-- 94% automation success rate
-- 2-minute workflow completion (vs 3 hours manual)
-- 1,325% ROI
 
 ## 📝 Development Timeline
 
@@ -152,3 +107,4 @@ MIT License - See LICENSE file for details
 **LinkedIn:** [Your LinkedIn]  
 
 **Portfolio:** [Your Website
+
