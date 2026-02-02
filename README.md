@@ -4,7 +4,6 @@
 
 [![Status](https://img.shields.io/badge/Status-Production%20Ready-success)]()
 [![Infrastructure](https://img.shields.io/badge/Infrastructure-AWS-orange)]()
-[![AI](https://img.shields.io/badge/AI-Claude%20Sonnet%204-blue)]()
 [![Cost](https://img.shields.io/badge/Cost-~\$6%2Fmonth-green)]()
 
 ---
@@ -414,4 +413,5 @@ MIT License - See [LICENSE](LICENSE) file for details
 ---
 
 **Built to demonstrate production-grade AI architecture for Solutions Architect interviews** 🚀
+
 
