@@ -104,7 +104,7 @@ MIT License - See LICENSE file for details
 
 **Built by:** shamukha_eeti
 **Contact:** eeti.sean@gmail.com 
-**LinkedIn:** [Your LinkedIn]  
+**LinkedIn:** https://www.linkedin.com/in/shaneeti/
 
-**Portfolio:** [Your Website
+**Portfolio:** 
 
