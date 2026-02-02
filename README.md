@@ -14,7 +14,7 @@ An intelligent automation platform that **eliminates manual workflows** by integ
 
 **Business Impact:** Saves \ annually by automating 145+ hours of manual work per week (3.65 FTEs).
 
-**Portfolio Purpose:** Demonstrates Solutions Architect capabilities through practical implementation of enterprise AI systems.
+
 
 ---
 
@@ -413,5 +413,6 @@ MIT License - See [LICENSE](LICENSE) file for details
 ---
 
 **Built to demonstrate production-grade AI architecture for Solutions Architect interviews** 🚀
+
 
 
