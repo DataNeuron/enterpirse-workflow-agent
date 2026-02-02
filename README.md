@@ -19,27 +19,6 @@ An intelligent automation platform that **eliminates manual workflows** by integ
 
 ---
 
-## 🚀 Live Demo
-
-### API Endpoints
-\\\ash
-# Health Check
-curl http://localhost:8000/health
-
-# Create Workflow
-curl -X POST http://localhost:8000/workflows \
-  -H "Content-Type: application/json" \
-  -d '{"user_input": "Payment gateway is down!", "channel": "#payments"}'
-
-# Get Workflow Status
-curl http://localhost:8000/workflows/{workflow_id}
-
-# Get System Stats
-curl http://localhost:8000/stats
-
-# Interactive Docs
-http://localhost:8000/docs
-\\\
 
 ---
 
@@ -55,45 +34,10 @@ http://localhost:8000/docs
 | **ROI** | 1,325% |
 | **Payback Period** | 1 month |
 
----
+## System Workflow
 
-## 🏗️ System Architecture
+<img width="2165" height="1518" alt="image" src="https://github.com/user-attachments/assets/f95bdd83-ba49-44be-9679-52d2267f38db" />
 
-\\\
-┌─────────────────────────────────────────────────────────┐
-│                    USER INPUT                           │
-│            (Slack, Email, API, Webhook)                 │
-└────────────────────┬────────────────────────────────────┘
-                     │
-                     ↓
-┌─────────────────────────────────────────────────────────┐
-│              FastAPI REST API (8000)                    │
-│  • Authentication • Rate Limiting • Validation          │
-└────────────────────┬────────────────────────────────────┘
-                     │
-                     ↓
-┌─────────────────────────────────────────────────────────┐
-│         LangGraph Orchestrator (State Machine)          │
-│                                                         │
-│  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐  │
-│  │ TRIAGE  │→│  JIRA   │→│  SLACK  │→│FINALIZE │  │
-│  │  Agent  │  │   MCP   │  │   MCP   │  │  State  │  │
-│  └─────────┘  └─────────┘  └─────────┘  └─────────┘  │
-│       ↓             ↓            ↓            ↓        │
-│  [AI Classification] [Create Ticket] [Notify] [Save]  │
-└────────────────────┬────────────────────────────────────┘
-                     │
-        ┌────────────┼────────────┐
-        │            │            │
-        ↓            ↓            ↓
-┌─────────────┐ ┌─────────┐ ┌─────────┐
-│AWS Bedrock  │ │DynamoDB │ │   S3    │
-│Claude       │ │State DB │ │  Logs   │
-│Sonnet 4     │ │         │ │         │
-└─────────────┘ └─────────┘ └─────────┘
-\\\
-
----
 
 ## 🛠️ Tech Stack
 
@@ -241,12 +185,7 @@ enterprise-workflow-agent/
 │   │   └── dashboards/            # Grafana dashboards
 │   └── prometheus/                # Prometheus configs
 │
-├── docs/                          # Documentation
-│   ├── day1-summary.md            # Day 1 progress
-│   ├── day2-summary.md            # Day 2 progress
-│   ├── day3-summary.md            # Day 3 progress
-│   ├── day4-summary.md            # Day 4 progress
-│   └── system-flowchart.md        # Architecture diagrams
+
 │
 ├── scripts/                       # Utility scripts
 │   └── deploy.sh                  # Deployment scripts
@@ -316,26 +255,8 @@ enterprise-workflow-agent/
 Total time: 2 minutes (vs 3 hours manual)
 \\\
 
-</details>
 
----
 
-## 💰 Cost Analysis
-
-<details>
-<summary>Click to see detailed cost breakdown</summary>
-
-### **Development Environment**
-\\\
-Monthly Costs:
-├── DynamoDB (pay-per-request)   \-3
-├── S3 (7-day retention)          \
-├── SQS                           \.50
-├── Bedrock (testing)             \-8
-└── VPC/Networking                FREE
-────────────────────────────────────
-Total: ~\-15/month
-\\\
 
 ### **Production Equivalent**
 \\\
@@ -455,27 +376,7 @@ ROI: 3,030%
 
 ---
 
-## 🧪 Testing
 
-\\\ash
-# Run all tests
-pytest tests/
-
-# Run specific test suites
-pytest tests/unit/          # Unit tests
-pytest tests/integration/   # Integration tests
-pytest tests/e2e/           # End-to-end tests
-
-# Test API endpoints
-curl http://localhost:8000/health
-
-# Test complete workflow
-curl -X POST http://localhost:8000/workflows \
-  -H "Content-Type: application/json" \
-  -d '{"user_input": "Test issue", "channel": "#bugs"}'
-\\\
-
----
 
 ## 📚 Documentation
 
@@ -505,7 +406,7 @@ MIT License - See [LICENSE](LICENSE) file for details
 
 ## 🙏 Acknowledgments
 
-- Built with [Anthropic Claude](https://www.anthropic.com/)
+
 - Infrastructure powered by [AWS](https://aws.amazon.com/)
 - Orchestration by [LangGraph](https://github.com/langchain-ai/langgraph)
 - Inspired by enterprise automation challenges
@@ -513,3 +414,4 @@ MIT License - See [LICENSE](LICENSE) file for details
 ---
 
 **Built to demonstrate production-grade AI architecture for Solutions Architect interviews** 🚀
+
