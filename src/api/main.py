@@ -323,3 +323,13 @@ async def get_stats():
 if __name__ == '__main__':
     import uvicorn
     uvicorn.run(app, host='0.0.0.0', port=8000)
+
+
+# Import metrics
+from observability.metrics import get_metrics
+
+@app.get('/metrics', tags=['Monitoring'])
+async def metrics():
+    '''Prometheus metrics endpoint'''
+    from observability.metrics import get_metrics
+    return get_metrics()

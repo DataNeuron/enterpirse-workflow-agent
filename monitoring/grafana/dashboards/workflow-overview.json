@@ -1,0 +1,178 @@
+﻿{
+  "dashboard": {
+    "title": "Enterprise Workflow Automation - Overview",
+    "tags": ["workflow", "ai", "automation"],
+    "timezone": "browser",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Workflow Success Rate",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "(sum(workflows_completed_total) / sum(workflows_started_total)) * 100",
+            "legendFormat": "Success Rate %"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "percent",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {"value": 0, "color": "red"},
+                {"value": 80, "color": "yellow"},
+                {"value": 95, "color": "green"}
+              ]
+            }
+          }
+        },
+        "gridPos": {"x": 0, "y": 0, "w": 6, "h": 4}
+      },
+      {
+        "id": 2,
+        "title": "Total Workflows (Today)",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "sum(increase(workflows_started_total[24h]))",
+            "legendFormat": "Workflows"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short",
+            "color": {"mode": "thresholds"}
+          }
+        },
+        "gridPos": {"x": 6, "y": 0, "w": 6, "h": 4}
+      },
+      {
+        "id": 3,
+        "title": "Average Workflow Duration",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "avg(workflow_duration_seconds)",
+            "legendFormat": "Avg Duration"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "s",
+            "decimals": 2
+          }
+        },
+        "gridPos": {"x": 12, "y": 0, "w": 6, "h": 4}
+      },
+      {
+        "id": 4,
+        "title": "LLM Cost (Today)",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "sum(increase(bedrock_cost_usd[24h]))",
+            "legendFormat": "Cost USD"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "currencyUSD",
+            "decimals": 2,
+            "color": {"mode": "thresholds"},
+            "thresholds": {
+              "steps": [
+                {"value": 0, "color": "green"},
+                {"value": 10, "color": "yellow"},
+                {"value": 50, "color": "red"}
+              ]
+            }
+          }
+        },
+        "gridPos": {"x": 18, "y": 0, "w": 6, "h": 4}
+      },
+      {
+        "id": 5,
+        "title": "Workflows by Priority",
+        "type": "piechart",
+        "targets": [
+          {
+            "expr": "sum by (priority) (workflows_completed_total)",
+            "legendFormat": "{{priority}}"
+          }
+        ],
+        "gridPos": {"x": 0, "y": 4, "w": 8, "h": 8}
+      },
+      {
+        "id": 6,
+        "title": "Workflow Execution Timeline",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(workflows_started_total[5m])",
+            "legendFormat": "Started"
+          },
+          {
+            "expr": "rate(workflows_completed_total[5m])",
+            "legendFormat": "Completed"
+          },
+          {
+            "expr": "rate(workflows_failed_total[5m])",
+            "legendFormat": "Failed"
+          }
+        ],
+        "gridPos": {"x": 8, "y": 4, "w": 16, "h": 8}
+      },
+      {
+        "id": 7,
+        "title": "Agent Classification Accuracy",
+        "type": "gauge",
+        "targets": [
+          {
+            "expr": "(sum(triage_correct_total) / sum(triage_total)) * 100",
+            "legendFormat": "Accuracy %"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "percent",
+            "min": 0,
+            "max": 100,
+            "thresholds": {
+              "steps": [
+                {"value": 0, "color": "red"},
+                {"value": 70, "color": "yellow"},
+                {"value": 90, "color": "green"}
+              ]
+            }
+          }
+        },
+        "gridPos": {"x": 0, "y": 12, "w": 8, "h": 8}
+      },
+      {
+        "id": 8,
+        "title": "Retry Rate by Step",
+        "type": "bargauge",
+        "targets": [
+          {
+            "expr": "sum by (step) (workflow_retries_total)",
+            "legendFormat": "{{step}}"
+          }
+        ],
+        "gridPos": {"x": 8, "y": 12, "w": 8, "h": 8}
+      },
+      {
+        "id": 9,
+        "title": "Bedrock Token Usage",
+        "type": "timeseries",
+        "targets": [
+          {
+            "expr": "rate(bedrock_tokens_total[5m])",
+            "legendFormat": "Tokens/sec"
+          }
+        ],
+        "gridPos": {"x": 16, "y": 12, "w": 8, "h": 8}
+      }
+    ]
+  }
+}

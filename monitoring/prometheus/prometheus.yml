@@ -1,0 +1,37 @@
+﻿# Prometheus configuration for Enterprise Workflow Automation Platform
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: 'dev'
+    environment: 'development'
+
+# Alerting configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: []
+
+# Scrape configurations
+scrape_configs:
+  # FastAPI metrics
+  - job_name: 'fastapi'
+    static_configs:
+      - targets: ['localhost:8000']
+    metrics_path: '/metrics'
+  
+  # Workflow orchestrator metrics
+  - job_name: 'workflow-orchestrator'
+    static_configs:
+      - targets: ['localhost:8001']
+    metrics_path: '/metrics'
+  
+  # AWS CloudWatch metrics (via exporter)
+  - job_name: 'aws-cloudwatch'
+    static_configs:
+      - targets: ['localhost:9106']
+  
+  # Node exporter for system metrics
+  - job_name: 'node'
+    static_configs:
+      - targets: ['localhost:9100']
